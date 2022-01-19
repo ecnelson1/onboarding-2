@@ -13,7 +13,9 @@ const container = document.querySelector('.profile');
 
 console.log('Elements', selectEl, nameEl, ageEl, bioEl, hobbiesEl, container);
 // set event listeners
-
+selectEl.addEventListener('change', (e) => {
+    console.log(' user clicked');
+})
 
     // get user input
     // use user input to update state 
