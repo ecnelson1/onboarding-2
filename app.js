@@ -12,11 +12,25 @@ const hobbiesEl = document.querySelector('.hobbies');
 const container = document.querySelector('.profile');
 
 console.log('Elements', selectEl, nameEl, ageEl, bioEl, hobbiesEl, container);
+
+function renderPerson(index) {
+    container.classList.add(`${people[index].name}`);
+    // for each index, set the text content for our elements
+    nameEl.textContent = 'Name: ' + people[index].name;
+    ageEl.textContent = 'Age: ' + people[index].age;
+    bioEl.textContent = 'Bio: ' + people[index].bio;
+
+    for (const hobby of people[index].hobbies) {
+        const li = document.createElement('li');
+        li.textContent = hobby;
+        hobbiesEl.appendChild(li);
+    }
+}
 // set event listeners
 selectEl.addEventListener('change', (e) => {
     console.log(' user clicked');
-})
+});
 
-    // get user input
-    // use user input to update state 
-    // update DOM to reflect the new state
+// get user input
+// use user input to update state
+// update DOM to reflect the new state
