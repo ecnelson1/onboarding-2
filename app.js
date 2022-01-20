@@ -20,15 +20,27 @@ function renderPerson(index) {
     ageEl.textContent = 'Age: ' + people[index].age;
     bioEl.textContent = 'Bio: ' + people[index].bio;
 
+    // hobby is a booger - it doesn't matter what you call it
     for (const hobby of people[index].hobbies) {
         const li = document.createElement('li');
         li.textContent = hobby;
         hobbiesEl.appendChild(li);
     }
 }
+
 // set event listeners
 selectEl.addEventListener('change', (e) => {
-    console.log(' user clicked');
+    hobbiesEl.innerHTML = '';
+    container.classList.remove('Eion', 'Juli', 'KB');
+    const selected = e.target.value;
+
+    if (selected === 'one') {
+        renderPerson(0);
+    } else if (selected === 'two') {
+        renderPerson(1);
+    } else {
+        renderPerson(2);
+    }
 });
 
 // get user input
